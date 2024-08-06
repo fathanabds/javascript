@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        form{
+            width: 600px;
+            padding: 20px;
+        }
+        form div{
+            margin: 10px;
+        }
+        label{
+            display: block;
+        }
+        /* input:invalid{
+            border: none;
+            outline: 2px solid red;
+            border-radius: 2px;
+        } */
+    </style>
+</head>
+<body>
+    <!-- autocomplete: u/ on/off autocomplete -->
+    <!-- novalidate: menghilangkan validasi -->
+    <form action="" method="post" autocomplete="off">
+        <div>
+            <!-- autofocus: u/ kursor langsung ke input nama saat halaman diload -->
+            <!-- min/maxlength: set min/max panjang karakter -->
+            <label for="nama">Nama:</label>
+            <input type="text" name="nama" id="nama" autofocus minlength="" maxlength="">
+        </div>
+
+        <div>
+            <!-- oninvalid: custom pesan invalid -->
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" autocomplete="on" oninvalid="this.setCustomValidity('Format email tidak sesuai.')">
+        </div>
+
+        <div>           
+            <!-- pattern: menggunakan regular expression (regex) -->
+            <!-- diawali dengan +62/62/0, diikuti dengan 8, diikuti dengan angka 1-9, diikuti dengan angka 0-9 yang min 6 digit max 9 digit -->
+            <label for="noHP">No. HP:</label>
+            <input type="tel" name="noHP" id="noHP"  pattern="(\+62|62|0)8[1-9][0-9]{6,9}$">
+        </div>
+
+        <div>
+            <label for="linkedin">Profil Linkedin (URL):</label>
+            <input type="url" name="linkedin" id="linkedin">
+        </div>
+
+        <div>
+            <!-- min max: nilai minimum dan maximum -->
+            <!-- step: hanya bisa mengisi angka kelipatan N -->
+            <!-- required: wajib diisi -->
+            <label for="usia">Usia:</label>
+            <input type="number" name="usia" id="usia" min="10" max="70" step="" required ">
+        </div>
+
+        <div>
+            <!-- type bisa date, month, week, time -->
+            <label for="tglLahir">Tanggal Lahir:</label>
+            <input type="date" name="tglLahir" id="tglLahir">
+        </div>
+
+        <div>
+            <label for="kuat">Seberapa Kuat Kamu?</label>
+            <span class="awal"></span>
+            <input type="range" name="kuat" id="kuat" min="0" max="100">
+            <span class="akhir"></span>
+        </div>
+
+        <div>
+            <label for="warnaFav">Warna Favorit:</label>
+            <input type="color" name="warnaFav" id="warnaFav">
+            <span class="hexa"></span>
+        </div>
+
+        <div>
+            <button type="submit">Kirim</button>
+        </div>
+    </form>
+
+<script>
+    const slider = document.querySelector('#kuat');
+    const awal = document.querySelector('.awal');
+    const akhir = document.querySelector('.akhir');
+
+    awal.innerHTML = slider.min;
+    akhir.innerHTML = slider.value;
+    slider.addEventListener('input',function () {
+        akhir.innerHTML = slider.value;
+    });
+
+    const warna = document.querySelector('#warnaFav');
+    const hexa = document.querySelector('.hexa');
+    hexa.innerHTML = warna.value;
+    warna.addEventListener('input', function () {
+            hexa.innerHTML = warna.value;
+            hexa.style.color = warna.value;
+        });
+</script>
+</body>
+</html>

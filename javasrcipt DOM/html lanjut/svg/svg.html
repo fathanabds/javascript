@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG</title>
+    <style>
+        svg {
+            display: block;
+            margin: 20px;
+            background-color: #eee;
+        }
+        .satu {
+            background-color: #ddd;
+            height: 300px;
+        }
+
+        .kotak1 {
+            width: 100px; 
+            height: 100px;
+            fill: salmon;
+            x: 100;
+            y: 100;
+        }
+
+        /* .code{
+            animation: putar 4s linear infinite;
+        }
+
+        @keyframes putar {
+            0%{
+                transform: rotate(0deg);
+            }
+
+            100%{
+                transform: rotate(360deg);
+            }
+        } */
+    </style>
+</head>
+<body>
+    <!-- viewBox="geserX geserY width height": jendela u/ melihat svg -->
+    <!-- membuat rectangle -->
+    <svg class="satu" viewBox="100 100 300 300">
+        <!-- styling svg bisa melalui CSS -->
+        <rect class="kotak1"/>
+    </svg>
+
+    <!-- membuat circle -->
+    <svg width="150" height="150" background>
+        <rect width="100" height="100" fill="lightblue"/>
+        <circle r="50" width="100" height="100" cx="50" cy="50" fill="salmon"/>
+        <rect width="70" height="70" fill="#333" x="15" y="15"/>
+    </svg>
+
+    <!-- membuat path -->
+    <svg>
+        <!-- M L: koordinat absolute dari 0,0 -->
+        <path fill="none" stroke="black"
+        d="M 60,10 L 110,90 H 10 L 60,10"/>
+
+        <!-- m l: koordinat relative dari posisi terakhirnya -->
+        <path fill="none" stroke="black" 
+        d="m 170,10 l 50,80 h -100 l 50,-80" />
+    </svg>
+
+    <!-- membuat kurva -->
+    <svg>
+        <path fill="none" stroke="red"
+        d="M 10,90 C 30,90 25,10 50,10 S 70,90 90,90"/>
+    </svg>
+
+    <!-- export svg menggunakan file -->
+    <img src="img/photo.svg" alt="atom svg" width="220px">
+
+    <!-- export svg menggunakan kode svg -->
+    <?xml version="1.0" encoding="utf-8"?>
+    <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+    <svg width="200px" height="200px" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M512 960c-92.8 0-160-200-160-448S419.2 64 512 64s160 200 160 448-67.2 448-160 448z m0-32c65.6 0 128-185.6 128-416S577.6 96 512 96s-128 185.6-128 416 62.4 416 128 416z"
+            fill="#050D42" />
+        <path
+            d="M124.8 736c-48-80 92.8-238.4 307.2-363.2S852.8 208 899.2 288 806.4 526.4 592 651.2 171.2 816 124.8 736z m27.2-16c33.6 57.6 225.6 17.6 424-97.6S905.6 361.6 872 304 646.4 286.4 448 401.6 118.4 662.4 152 720z"
+            fill="#050D42" />
+        <path
+            d="M899.2 736c-46.4 80-254.4 38.4-467.2-84.8S76.8 368 124.8 288s254.4-38.4 467.2 84.8S947.2 656 899.2 736z m-27.2-16c33.6-57.6-97.6-203.2-296-318.4S184 246.4 152 304 249.6 507.2 448 622.4s392 155.2 424 97.6z"
+            fill="#050D42" />
+        <path
+            d="M512 592c-44.8 0-80-35.2-80-80s35.2-80 80-80 80 35.2 80 80-35.2 80-80 80zM272 312c-27.2 0-48-20.8-48-48s20.8-48 48-48 48 20.8 48 48-20.8 48-48 48zM416 880c-27.2 0-48-20.8-48-48s20.8-48 48-48 48 20.8 48 48-20.8 48-48 48z m448-432c-27.2 0-48-20.8-48-48s20.8-48 48-48 48 20.8 48 48-20.8 48-48 48z"
+            fill="green" />
+    </svg>
+</body>
+</html>

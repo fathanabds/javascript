@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio</title>
+    <style>
+        h1, body{
+            padding: 0;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .hero{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            /* background-color: rgb(0,0,0,0.3); */
+            background-image: linear-gradient(to right, rgba(34, 205, 102, 0.3), rgba(27, 138, 248, 0));
+            color: rgba(255,255,255,0.5);
+            font-size: 3em;
+            position: relative;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        .video-bg{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            min-height: 100%;
+            min-width: 100%;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <!-- <figure>
+        <figcaption>Dengarkan "Mortals - Egzod"</figcaption> -->
+        <!-- apabila browser support ogg, maka load ogg. jika tidak, load mp3 -->
+        <!-- controls: menampilkan tombol play/pause dll -->
+        <!-- loop: mengulang terus -->
+        <!-- muted: mute -->
+        <!-- <audio src="audio/audio.mp3"></audio> -->
+        <!-- <audio controls loop>
+            <source src="audio/audio.ogg" type="audio/ogg">
+            <source src="audio/audio.mp3" type="audio/mpeg"> -->
+            <!-- memunculkan pesan apabila tidak support -->
+            <!-- browser tidak mendukung tag <code>audio</code>
+        </audio>
+    </figure> -->
+
+    <!-- <figure>
+        <figcaption>Mainkan Memori Pantai</figcaption> -->
+        <!-- controls: menampilkan tombol play/pause dll -->
+        <!-- loop: mengulang terus -->
+        <!-- muted: mute -->
+        <!-- width: lebar video | height: tinggi video -->
+        <!-- poster: menampilkan gambar saat video belum diplay atau video tidak dapat diload -->
+        <!-- autoplay muted: otomatis memutar video tanpa suara -->
+        <!-- <video loop controls width="700px" src="video/video.mp4"></video> -->
+        <!-- <video controls width="700px" loop poster="img/photo.png" autoplay muted>
+            <source src="video/video.webm" type="video/webm">
+            <source src="video/video.mp4" type="video/mp4"> -->
+            <!-- memunculkan pesan apabila tidak support -->
+            <!-- browser tidak mendukung tag <code>video</code>
+        </video>
+    </figure> -->
+
+    <!-- membuat video menjadi background website -->
+    <div class="hero">
+        <h1>main di pantai</h1>
+        <video class="video-bg" src="video/video.webm" loop autoplay muted width="100%"></video>
+    </div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Storage</title>
+    <style>
+        a{
+            color: inherit;
+        }
+        .dark-mode{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1></h1>
+    <a href="" onclick="gantiNama()">ganti nama</a>
+    <a href="" onclick="hapusNama()">hapus nama</a>
+    <a href="" class="toggle">dark mode</a>
+    <a href="" onclick="reset()">reset storage</a>
+
+<script>
+    const h1 = document.querySelector('h1');
+
+    // localStorage: tidak terhapus meskipun browser ditutup
+    // sessionStorage: terhapus saat tab ditutup
+    let nama = localStorage.getItem('nama');
+    if (!nama){
+        nama = prompt('nama');
+        localStorage.setItem('nama', nama);
+    };
+
+    h1.innerHTML = 'halo ' + nama;
+
+    function gantiNama(e){
+        localStorage.removeItem('nama');
+        e.preventDefault();
+    };
+
+    function hapusNama(e) {
+        localStorage.removeItem('nama');
+        localStorage.setItem('nama', 'null');
+        e.preventDefault();
+    };
+
+    // dark mode light mode
+    const toggle = document.querySelector('.toggle');
+    let tema = localStorage.getItem('tema');
+
+    if (!tema){
+        localStorage.setItem('tema','light')
+    } else if (tema == 'dark'){
+        darkMode();
+    }
+
+    function darkMode() {
+        document.body.classList.toggle('dark-mode');
+        toggle.innerHTML = 'light mode';
+        localStorage.setItem('tema', 'dark')
+    };
+
+    function lightMode() {
+        document.body.classList.toggle('dark-mode');
+        toggle.innerHTML = 'dark mode';
+        localStorage.setItem('tema', 'light')
+    };
+
+    toggle.addEventListener('click', function(e){
+        tema = localStorage.getItem('tema');
+        if (tema == 'light'){
+            darkMode();
+        } else {
+            lightMode();
+        }
+        e.preventDefault();
+    });
+
+    function reset(e) {
+        localStorage.clear();
+        // e.preventDefault();
+    };
+</script>
+</body>
+</html>

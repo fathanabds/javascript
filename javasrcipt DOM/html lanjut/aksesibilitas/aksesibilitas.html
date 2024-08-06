@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aksesibilitas</title>
+</head>
+<body>
+    
+    <h1>hello world</h1>
+
+    <label for="nama">Nama:</label>
+    <input type="text" name="nama" id="nama">
+
+    <label for="jurusan">Jurusan:</label>
+    <select name="jurusan" id="jurusan">
+        <option value="if">Informatika</option>
+        <option value="ti">Teknik Industri</option>
+    </select>
+
+    <button type="submit" style="margin-bottom: 30px;">Kirim</button>
+
+    <!-- tabindex: agar elemen non-interaksi bisa dipilih menggunakan tab -->
+    <!-- role: agar elemen dibaca sebagai role tertentu oleh screen reader -->
+    <div tabindex="0" role="button" onclick="showAlert('diklik')" id="button1">tombol 1</div>
+
+<script>
+    function showAlert(text) {
+        alert(text);
+    };
+
+    const button1 = document.querySelector('#button1');
+    button1.addEventListener('keyup', function(ev){
+        // keycode 32 = spasi, 13 = enter
+        if (ev.keyCode == 32 || ev.keyCode == 13){
+            showAlert('di-keyboard');
+        }
+    })
+</script>
+</body>
+</html>

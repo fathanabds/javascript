@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>HTML Form</title>
+</head>
+<body>
+	<form>
+		<table border="1">
+			<tr>
+				<!-- contoh input text -->
+				<td><label for="username">username : </label></td>
+				<td><input type="text" id="username"></td>
+			</tr>
+
+			<tr>
+				<!-- contoh input password -->
+				<td><label for="password">password : </label></td>
+				<td><input type="password" id="password"></td>
+			</tr>
+
+			<tr>
+				<td>jenis kelamin : </td>
+				<td>
+					<input type="radio" id="pria" name="jeniskelamin"><label for="pria">pria</label>
+					<input type="radio" id="wanita" name="jeniskelamin"><label for="wanita">wanita</label>
+				</td>
+			</tr>
+
+			<tr>
+				<td>hobi : </td>
+				<td>
+					<!-- contoh input checkbox -->
+					<input type="checkbox" id="menyanyi" name=""><label for="menyanyi">menyanyi</label>
+					<input type="checkbox" id="mendaki" name=""><label for="mendaki">mendaki</label>
+					<input type="checkbox" id="berenang" name=""><label for="berenang">berenang</label>
+				</td>
+			</tr>
+
+			<tr>
+				<td>ringkasan : </td>
+				<!-- contoh textarea -->
+				<td><textarea></textarea></td>
+			</tr>
+			
+			<tr>
+				<td>kota lahir : </td>
+				<td><!-- contoh dropdown/combo box -->
+					<select>
+						<option>bandung</option>
+						<option>bekasi</option>
+						<option>jakarta</option>
+					</select>
+				</td>
+			</tr>
+
+			<tr>
+				<td colspan="2">
+					<!-- contoh button submit & reset -->
+					<button type="Submit">Submit</button>
+					<button type="Reset">Reset</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
